@@ -1,10 +1,10 @@
 .PHONY: build
 
-AWS_ROLE ?= arn:aws:iam::543279062384:role/admin
+AWS_ROLE ?= arn:aws:iam::917612184475:role/admin
 
 build:
 	$(if $(and $(AWS_PROFILE),$(AWS_ROLE)),$(call assume_role,$(AWS_ROLE)),)
-	@ packer build packer.json
+	@ /home/b005171/docker-production/packer build packer.json
 
 # AWS assume role settings
 # Conditionally attempts to assume IAM role using STS
